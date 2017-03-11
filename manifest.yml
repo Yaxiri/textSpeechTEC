@@ -1,10 +1,12 @@
+---
+declared-services:
+  my-stt-service:
+    label: speech_to_text
+    plan: standard
 applications:
-- path: .
-  memory: 256M
-  instances: 1
-  domain: mybluemix.net
-  name: textSpeechTEC
-  host: textSpeechTEC
-  disk_quota: 1024M
+- name: speech-to-text-demo
+  path: .
+  command: npm start
+  memory: 512M
   services:
-  - Texto a voz-yh
+  - my-stt-service
